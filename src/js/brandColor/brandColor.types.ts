@@ -179,4 +179,8 @@ export type BrandColor = {
   lime025: string;
   /** lime/lime050: #e3febd */
   lime050: string;
+  /** white: #ffffff */
+  white: string;
+  /** black: #000000 */
+  black: string;
 };

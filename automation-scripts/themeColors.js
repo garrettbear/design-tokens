@@ -31,7 +31,7 @@ async function generateThemeFiles(inputFilePath, colorsOutputFilePath) {
             (_, p1, p2, p3) => {
               // Replace "-" with "_" and remove "%" for percentage-based modifiers
               return `brandColor.${p1}${p2}${
-                p3 ? p3.replace(/-/g, '_').replace(/%/g, '') : ''
+                p3 ? p3.replace(/-/gu, '_').replace(/%/gu, '') : ''
               }`;
             },
           );
@@ -61,23 +61,11 @@ async function generateThemeFiles(inputFilePath, colorsOutputFilePath) {
 }
 
 // Light Theme
-// const inputFilePathLight = '../src/figma/lightTheme.json';
-// const colorsOutputFilePathLight = '../src/js/themes/lightTheme/colors.ts';
-// generateThemeFiles(inputFilePathLight, colorsOutputFilePathLight);
-
-// Dark Theme
-// const inputFilePathDark = '../src/figma/darkTheme.json';
-// const colorsOutputFilePathDark = '../src/js/themes/darkTheme/colors.ts';
-// generateThemeFiles(inputFilePathDark, colorsOutputFilePathDark);
-
-// Light Theme Brand Evolution
-const inputFilePathLight = '../src/figma/lightThemeBrandEvolution.json';
-const colorsOutputFilePathLight =
-  '../src/js/themesBrandEvolution/lightTheme/colors.ts';
+const inputFilePathLight = '../src/figma/lightTheme.json';
+const colorsOutputFilePathLight = '../src/js/themes/lightTheme/colors.ts';
 generateThemeFiles(inputFilePathLight, colorsOutputFilePathLight);
 
-// Dark Theme Brand Evolution
-const inputFilePathDark = '../src/figma/darkThemeBrandEvolution.json';
-const colorsOutputFilePathDark =
-  '../src/js/themesBrandEvolution/darkTheme/colors.ts';
+// Dark Theme
+const inputFilePathDark = '../src/figma/darkTheme.json';
+const colorsOutputFilePathDark = '../src/js/themes/darkTheme/colors.ts';
 generateThemeFiles(inputFilePathDark, colorsOutputFilePathDark);

@@ -181,4 +181,8 @@ export const brandColor: BrandColor = {
   lime025: '#effed9',
   // Lime
   lime050: '#e3febd',
+  // White
+  white: '#ffffff',
+  // Black
+  black: '#000000',
 };

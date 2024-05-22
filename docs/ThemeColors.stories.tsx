@@ -1,10 +1,6 @@
 import React from 'react';
 import brandColor from '../src/figma/brandColors.json';
 import { lightTheme, darkTheme } from '../src/js/themes';
-import {
-  lightTheme as lightThemeBrandEvolution,
-  darkTheme as darkThemeBrandEvolution,
-} from '../src/js/themesBrandEvolution';
 import { ColorSwatch, ColorSwatchGroup } from './components';
 import README from './ThemeColors.mdx';
 import { getCSSVariablesFromStylesheet, useJsonColor } from './utils';
@@ -173,55 +169,6 @@ export const JSDarkTheme = {
             name={`color.${category}.${name}`}
           />
         )),
-      )}
-    </div>
-  ),
-};
-
-export const JSLightThemeBrandEvolution = {
-  render: () => (
-    <div
-      style={{
-        display: 'grid',
-        gap: '16px',
-        gridTemplateColumns: 'repeat(auto-fill, 300px)',
-        padding: '16px',
-      }}
-    >
-      {Object.entries(lightThemeBrandEvolution.colors).flatMap(
-        ([category, colorObj]) =>
-          Object.entries(colorObj).map(([name, color]) => (
-            <ColorSwatch
-              key={`${category}-${name}`}
-              color={color}
-              name={`color.${category}.${name}`}
-            />
-          )),
-      )}
-    </div>
-  ),
-};
-
-export const JSDarkThemeBrandEvolution = {
-  render: () => (
-    <div
-      style={{
-        display: 'grid',
-        gap: '16px',
-        gridTemplateColumns: 'repeat(auto-fill, 300px)',
-        padding: '16px',
-        backgroundColor: darkThemeBrandEvolution.colors.background.default,
-      }}
-    >
-      {Object.entries(darkThemeBrandEvolution.colors).flatMap(
-        ([category, colorObj]) =>
-          Object.entries(colorObj).map(([name, color]) => (
-            <ColorSwatch
-              key={`${category}-${name}`}
-              color={color}
-              name={`color.${category}.${name}`}
-            />
-          )),
       )}
     </div>
   ),
