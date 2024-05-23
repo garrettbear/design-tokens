@@ -1,15 +1,13 @@
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import { typography } from '../src/js/typography';
 
-import { fontSizes } from '../src/js/typography/fontSizes';
-import { lineHeights } from '../src/js/typography/lineHeights';
+import { typography } from '../src/js/typography';
 import { fontFamilies } from '../src/js/typography/fontFamilies';
+import { fontSizes } from '../src/js/typography/fontSizes';
 import { fontWeights } from '../src/js/typography/fontWeights';
 import { letterSpacing } from '../src/js/typography/letterSpacing';
-
+import { lineHeights } from '../src/js/typography/lineHeights';
 import { Text } from './components';
-
 import README from './Typography.mdx';
 
 export default {

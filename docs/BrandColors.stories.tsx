@@ -1,9 +1,10 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
 import { brandColor as brandColorJS } from '../src/js';
-import { getCSSVariablesFromStylesheet, useJsonColor } from './utils';
-import { ColorSwatchGroup, ColorSwatch } from './components';
 import README from './BrandColors.mdx';
+import { ColorSwatchGroup, ColorSwatch } from './components';
+import { getCSSVariablesFromStylesheet, useJsonColor } from './utils';
 
 const meta: Meta<typeof ColorSwatchGroup> = {
   title: 'Colors/Brand Colors',
@@ -22,11 +23,14 @@ type Story = StoryObj<typeof ColorSwatchGroup>;
 export const Figma: Story = {
   render: () => {
     const { brandColor } = useJsonColor();
+    if (!brandColor) {
+      return <div>Error: Brand colors not found</div>;
+    }
     return <ColorSwatchGroup swatchData={brandColor} />;
   },
 };
 
-export const CSS: Story = {
+export const CSSStory: Story = {
   render: () => {
     const cssBrandColors = getCSSVariablesFromStylesheet('--brand-colors');
     return (

@@ -37,6 +37,14 @@ jobs:
             ./dist
             ./node_modules/.yarn-state.yml
           key: ${{ github.sha }}
+      - run: yarn setup
+      - uses: MetaMask/action-publish-gh-pages@v2
+        with:
+          build-command: build-storybook
+          source-directory: storybook-static
+          destination-directory: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-npm-dry-run:
     runs-on: ubuntu-latest

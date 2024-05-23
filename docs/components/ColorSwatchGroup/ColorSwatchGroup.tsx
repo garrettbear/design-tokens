@@ -1,8 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import { Theme } from '../../utils/useJsonColor';
-import { ColorSwatch } from '..';
+import type { FunctionComponent } from 'react';
+import React from 'react';
 
-interface ColorSwatchGroupProps {
+import { ColorSwatch } from '..';
+import type { Theme } from '../../utils/useJsonColor';
+
+type ColorSwatchGroupProps = {
   /**
    * The color object
    */
@@ -23,7 +25,7 @@ interface ColorSwatchGroupProps {
    * The name of the color
    */
   name?: string;
-}
+};
 
 export const ColorSwatchGroup: FunctionComponent<ColorSwatchGroupProps> = ({
   swatchData,
@@ -39,7 +41,7 @@ export const ColorSwatchGroup: FunctionComponent<ColorSwatchGroupProps> = ({
   const renderSwatches = () => {
     return swatchColorsArr.map((category) => {
       const colorsObj = swatchData[category];
-      let colorsArr: any = [];
+      const colorsArr: any = [];
       const recursiveColors = (nextLevel, label) => {
         for (const key in nextLevel) {
           const level = nextLevel[key];

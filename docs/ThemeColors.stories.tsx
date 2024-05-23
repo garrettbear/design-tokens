@@ -43,9 +43,9 @@ export const FigmaDarkTheme = {
       >
         <ColorSwatchGroup
           swatchData={darkTheme}
-          borderColor={darkTheme.border.muted.value}
-          textBackgroundColor={darkTheme.background.default.value}
-          textColor={darkTheme.text.default.value}
+          borderColor={darkTheme?.border?.muted?.value}
+          textBackgroundColor={darkTheme?.background?.default?.value}
+          textColor={darkTheme?.text?.default?.value}
         />
       </div>
     );
@@ -124,7 +124,7 @@ export const CSSDarkTheme = {
     values: [{ name: 'dark', value: 'var(--color-background-default)' }],
   },
   decorators: [
-    (StoryFn) => {
+    (StoryFn: React.FC) => {
       // Check if document object is available
       if (typeof document !== 'undefined') {
         // Add the data-theme attribute to the root element
