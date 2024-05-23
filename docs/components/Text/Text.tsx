@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { fontFamilies } from '../../../src/js/typography/fontFamilies';
 
-interface Props<C extends React.ElementType> {
+type Props<C extends React.ElementType> = {
   /**
    * The children or content of the Text component
    */
@@ -18,7 +19,7 @@ interface Props<C extends React.ElementType> {
    * The color prop of the Text component
    */
   color?: string;
-}
+};
 
 type TextProps<C extends React.ElementType> = Props<C> &
   Omit<React.ComponentPropsWithoutRef<C>, keyof Props<C>>;

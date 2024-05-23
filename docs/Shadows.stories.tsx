@@ -1,14 +1,15 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from './components';
+import React from 'react';
+
+import { Text as ShadowText } from './components';
 import README from './Shadows.mdx';
 
-interface ShadowSwatchProps {
+type ShadowSwatchProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
   size?: 'xs' | 'sm' | 'md' | 'lg';
   color?: 'default' | 'primary' | 'error';
-}
+};
 
 const ShadowSwatch: React.FC<ShadowSwatchProps> = ({
   children,
@@ -73,9 +74,9 @@ export const DefaultStory: StoryObj<typeof ShadowSwatch> = {
       }}
     >
       <ShadowSwatch {...args}>
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           Shadow
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
     </div>
   ),
@@ -91,24 +92,24 @@ export const Size: StoryObj<typeof ShadowSwatch> = {
       }}
     >
       <ShadowSwatch color={args.color} size="xs">
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           XS
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
       <ShadowSwatch color={args.color} size="sm">
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           SM
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
       <ShadowSwatch color={args.color} size="md">
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           MD
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
       <ShadowSwatch color={args.color} size="lg">
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           LG
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
     </div>
   ),
@@ -128,9 +129,9 @@ export const Color: StoryObj<typeof ShadowSwatch> = {
       }}
     >
       <ShadowSwatch color="default" size={args.size}>
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           Default
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
       <ShadowSwatch
         color="primary"
@@ -140,9 +141,9 @@ export const Color: StoryObj<typeof ShadowSwatch> = {
           color: 'var(--color-primary-inverse)',
         }}
       >
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           Primary
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
       <ShadowSwatch
         color="error"
@@ -152,9 +153,9 @@ export const Color: StoryObj<typeof ShadowSwatch> = {
           color: 'var(--color-error-inverse)',
         }}
       >
-        <Text as="p" style={{ margin: 0 }}>
+        <ShadowText as="p" style={{ margin: 0 }}>
           Error/Danger
-        </Text>
+        </ShadowText>
       </ShadowSwatch>
     </div>
   ),
@@ -180,36 +181,36 @@ export const ExampleUsage = {
             boxShadow: 'var(--shadow-size-xs) var(--color-shadow-default)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Card
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
         <ShadowSwatch
           style={{
             boxShadow: 'var(--shadow-size-sm) var(--color-shadow-default)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Dropdown
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
         <ShadowSwatch
           style={{
             boxShadow: 'var(--shadow-size-md) var(--color-shadow-default)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Toast
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
         <ShadowSwatch
           style={{
             boxShadow: 'var(--shadow-size-lg) var(--color-shadow-default)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Modal
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
       </div>
       <div
@@ -226,9 +227,9 @@ export const ExampleUsage = {
             color: 'var(--color-primary-inverse)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Button Primary Hover
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
         <ShadowSwatch
           style={{
@@ -237,9 +238,9 @@ export const ExampleUsage = {
             color: 'var(--color-error-inverse)',
           }}
         >
-          <Text as="p" style={{ margin: 0 }}>
+          <ShadowText as="p" style={{ margin: 0 }}>
             Button Error/Danger Hover
-          </Text>
+          </ShadowText>
         </ShadowSwatch>
       </div>
     </div>

@@ -1,7 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
+import React from 'react';
+
 import { lightTheme } from '../../../src';
 
-interface ColorSwatchProps {
+type ColorSwatchProps = {
   /**
    * The color of the swatch
    */
@@ -26,7 +28,7 @@ interface ColorSwatchProps {
    * The name of the color
    */
   name?: string;
-}
+};
 
 export const ColorSwatch: FunctionComponent<ColorSwatchProps> = ({
   color,
@@ -41,7 +43,7 @@ export const ColorSwatch: FunctionComponent<ColorSwatchProps> = ({
     <div
       style={{
         height: 120,
-        backgroundColor: backgroundColor ? backgroundColor : color,
+        backgroundColor: backgroundColor || color,
         border: `2px solid ${borderColor}`,
         display: 'flex',
         flexDirection: 'column-reverse',
