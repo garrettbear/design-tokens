@@ -22,6 +22,9 @@ type Story = StoryObj<typeof ColorSwatchGroup>;
 export const Figma: Story = {
   render: () => {
     const { brandColor } = useJsonColor();
+    if (!brandColor) {
+      return <div>Error: Brand colors not found</div>;
+    }
     return <ColorSwatchGroup swatchData={brandColor} />;
   },
 };
